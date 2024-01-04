@@ -1,4 +1,4 @@
-# imgExtend
+# ImgExtend
 Extend the resolution of your images!
 This program works by extending the original image in the direction specified, and filling the new space with the color at the center of the edge, where the image is extending.
 Very useful for making wallpapers for machines, with differing resolutions of the original image.
