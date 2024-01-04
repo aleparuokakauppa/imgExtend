@@ -16,3 +16,12 @@ It might be useful to run `file` on the inputImage to get its resolution, to hav
 # Roadmap
 - The program extends only upwards, in the future images could be extended in any direction.
 - Maybe non PNG images
+
+# Example images
+Img source: Ripple Effects KAI DAHMS, UNSPLASH
+
+Original image:
+![Kai_Dahms_Ripples.png](https://github.com/aleparuokakauppa/imgExtend/blob/main/images/Kai_Dahms_Ripples.png?raw=true)
+
+Extended with `./main images/Kai_Dahms_Ripples.png 1500`:
+![Kai_Dahms_Ripples_extended.png](https://github.com/aleparuokakauppa/imgExtend/blob/main/images/Kai_Dahms_Ripples_extended.png?raw=true)
