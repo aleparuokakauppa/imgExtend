@@ -11,7 +11,7 @@ Build with:
 Run:
 `./main [inputImage.png] [new resolution eg. 1500]`
 
-It might be useful to run `file` on the inputImage to get its resolution, to have context on what the new resolution should be.
+It might be useful to run `file` (or similar) on the inputImage to get its resolution, to have context on what the new resolution should be.
 
 # Roadmap
 - The program extends only upwards, in the future images could be extended in any direction.
