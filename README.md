@@ -7,7 +7,7 @@ Currently only works with PNG images.
 # Usage
 Run:
 ```bash
-go run main.go [inputImage.png] [new resolution eg. 1500] [horizontal offset for fillcolor (optional)]
+go run main.go [inputImage.png] [new resolution eg. 1500] [horizontal offset to fillcolor (optional)]
 ```
 
 It might be useful to run `file` (or similar) on the inputImage to get its resolution, to have context on what the new resolution should be.
