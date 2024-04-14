@@ -22,5 +22,5 @@ Img source: Ripple Effects KAI DAHMS, UNSPLASH
 Original image:
 ![Kai_Dahms_Ripples.png](https://github.com/aleparuokakauppa/imgExtend/blob/main/images/Kai_Dahms_Ripples.png?raw=true)
 
-Extended with `./main images/Kai_Dahms_Ripples.png 1500`:
+Extended with `go run main.go images/Kai_Dahms_Ripples.png 500`:
 ![Kai_Dahms_Ripples_extended.png](https://github.com/aleparuokakauppa/imgExtend/blob/main/images/Kai_Dahms_Ripples_extended.png?raw=true)
