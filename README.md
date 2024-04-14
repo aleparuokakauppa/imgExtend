@@ -5,11 +5,10 @@ Very useful for making wallpapers for machines, with differing resolutions of th
 Currently only works with PNG images.
 
 # Usage
-Build with:
-`go build`
-
 Run:
-`./main [inputImage.png] [new resolution eg. 1500]`
+```bash
+go run main.go [inputImage.png] [new resolution eg. 1500] [horizontal offset for fillcolor (optional)]
+```
 
 It might be useful to run `file` (or similar) on the inputImage to get its resolution, to have context on what the new resolution should be.
 

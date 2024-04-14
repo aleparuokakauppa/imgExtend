@@ -10,11 +10,12 @@ import (
 	"os"
     "path/filepath"
     "strings"
+    "math"
 )
 
 func main() {
     if len(os.Args) < 3 {
-        log.Fatal("Not enough arguments. Need 2: Filepath, new height")
+        log.Fatal("Not enough arguments. Need at least 2: Filepath, new height (, horizontal top offset)")
     }
     // First argument is path to file
     imageFile, err := os.Open(os.Args[1])
@@ -40,8 +41,21 @@ func main() {
         panic(fmt.Errorf("Invalid height"))
     }
 
+    horizontalOffset := 0;
+    if len(os.Args) == 4 {
+        var err error;
+        horizontalOffset, err = strconv.Atoi(os.Args[3]);
+        if err != nil {
+            panic(err);
+        }
+        absOffset := math.Abs(float64(horizontalOffset));
+        if int(absOffset) >= imageData.Bounds().Dx() / 2 {
+            panic(fmt.Errorf("Horizontal offset must be within the bounds of the image"));
+        }
+    }
+
     // Get the color at the center top of the image
-    fillColor := imageData.At((imageData.Bounds().Max.X)/2, 0)
+    fillColor := imageData.At((imageData.Bounds().Max.X)/2 + horizontalOffset, 0)
     // Create the new image in memory
     newImg := image.NewRGBA(image.Rect(0, 0, imageData.Bounds().Dx(), newHeight))
     // Copy the image data from the previous image into the new image created
@@ -83,7 +97,6 @@ func copyImgBottom(src image.Image, dest *image.RGBA) error {
     return nil
 }
 
-//func fillTop(r uint32, g uint32, b uint32, a uint32, offset int, dest *image.RGBA) error {
 func fillTop(fillColor color.Color, offset int, dest *image.RGBA) error {
     for y:= 0; y < offset; y++ {
         for x := 0; x < dest.Bounds().Dx(); x++ {
